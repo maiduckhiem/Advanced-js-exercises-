@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css" media="screen">
+        #target {
+            border: 1px solid gray;
+            margin: auto;
+        }
+        .title{
+            border: red;
+            text-align: center;
+            color: royalblue;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="txtInput" value="">
+    <h3>input text</h3>
+    <div id="target"></div>
+    <script>
+        var h3text = document.querySelector("h3");
+        var txtInput = document.querySelector("#txtInput");
+
+        //onkeyup sự kiện nhậm từ bàn phím
+        txtInput.onkeyup= function () {
+           h3text.innerText = txtInput.value; 
+        }
+
+        //phần 2 bài 2:
+
+            //queryselector lấy phần tử đầu tiên của mảng
+            var target = document.querySelector("#target");
+
+            // createElement tạo ra một thẻ h2 
+            var h2el = document.createElement("h2");
+
+            //set text hiển thị cho thẻ h2
+            h2el.innerText = "hello polytechnic";
+
+            //gán giá trị hoặc thay đổi thuộc tính cho class
+            h2el.setAttribute("class", "title");
+
+            //thêm dom vào thẻ h2 vào trong thẻ div
+            target.appendChild(h2el);
+    </script>
+</body>
+</html>

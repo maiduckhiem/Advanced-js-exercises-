@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    String<input type="text" id="txt"><br>
+    Number <input type="text" id="numb"> <br>
+    <button id="btn_check">Convert</button>
+    <p id="kq"></p>
+    <script>
+        document.getElementById('btn_check').addEventListener('click', function () {
+            var txt = document.getElementById('txt').value;
+            var numb = document.getElementById('numb').value;
+            console.log(txt);
+            console.log(numb);
+            var kq = txt.slice(0, (numb));
+            console.log(kq.length);
+            if (kq.length < txt.length) {
+                document.getElementById('kq').innerHTML = kq + "...";
+            } else
+                document.getElementById('kq').innerHTML = kq + ".";
+        });
+
+    </script>
+</body>
+
+</html>

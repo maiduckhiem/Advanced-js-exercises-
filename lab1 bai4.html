@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        .user_item{
+            color:green;
+            text-decoration: underline;
+            cursor:pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form">
+        <div>
+            <label for="">id</label>
+            <input type="text" id="addUserÌD" value="" placeholder="" />
+        </div>
+        <div>
+            <label for="">name</label>
+            <input type="text" id="addUserText" value="" placeholder="" />
+        </div>
+        <div>
+            <label for="">gender</label>
+            <select name="" id="addUserGender">
+                <option value="male">male</option>
+                <option value="female">female</option>
+            </select>
+        </div>
+        <div>
+            <button type="button" id="addAction">add</button>
+        </div>
+    </div>
+    <ul id="target"></ul>
+    <script>
+        var user = [
+            {
+                id: 1,
+                name: "james smith",
+                gender: 1,
+            },
+            {
+                id: 2,
+                name: "isla brown",
+                gender: 2,
+            },
+            {
+                id: 3,
+                name: "amelia davies",
+                gender: 1,
+            },
+            {
+                id: 4,
+                name: "jacod evans",
+                gender: 1,
+            },
+        ];
+        var target = document.querySelector("#target");
+        user.forEach(function (item) {
+            var lagit = document.createElement("li");
+            lagit.setAttribute("class", "user_item");
+            lagit.innerText=`${item.id}-${item.name}-${item.gender === 1 ? "male" : "female"}`;
+            target.appendChild(lagit);
+        });
+        var id = document.getElementById("addUserÌD");
+        var title = document.getElementById("addUserText");
+        var gender = document.getElementById("addUserGender");
+        var btAction = document.getElementById("addAction");
+        
+        btAction.addEventListener("click",function () {
+            var tagliafter = document.createElement("li");
+            tagliafter.setAttribute("class","user_item");
+            tagliafter.innerText=`${id.value}-${title.value}-${gender.value}`;
+            target.appendChild(tagliafter);
+        });
+    </script>
+</body>
+
+</html>

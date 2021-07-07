@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" value="" id="cannang" placeholder="can nang">
+    <input type="text" value="" id="chieucao" placeholder="chieu cao">
+    <button id="enter">enter</button>
+    <h3 id="kq"></h3>
+    <script>
+        document.querySelector("#enter").addEventListener('click',function () {
+            var cannang = document.getElementById('cannang').value;
+            var chieucao = document.getElementById('chieucao').value;
+            var one = cannang/chieucao^2;
+            document.getElementById('kq').innerHTML = 'chỉ số BMI của bạn là :'+ one;
+        })
+    </script>
+</body>
+</html>

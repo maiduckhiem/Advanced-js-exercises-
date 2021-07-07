@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" value="" id="text">
+    <button id="bt">enter</button>
+    <button id="bt-sort">sort</button>
+    <ul id="list-ul"></ul>
+    <script>
+        var arr = [];
+        document.querySelector('#bt').addEventListener('click',function () {
+            var txt = document.getElementById("text").value.toUpperCase();
+            arr.push(txt);
+            var liElment = document.createElement('li');
+                liElment.innerText=txt;
+                document.querySelector('ul#list-ul').appendChild(liElment);
+        });
+
+        document.querySelector("#bt-sort").addEventListener('click', function () {
+                var result = arr.sort();
+                
+                document.querySelector('ul#list-ul').innerHTML='';
+                var html= '';
+                result.forEach(value => {
+                    html += '<li>' + value + '</li>'
+                });
+                document.querySelector('ul#list-ul').innerHTML = html;
+        });
+    </script>
+</body>
+</html>

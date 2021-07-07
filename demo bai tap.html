@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var sv1 ={
+            ma_sinh_vien: "",
+            ho_va_ten: "",
+            lop: "",
+            ngay_nhap_hoc: new date(2021,05,21),
+            diem_trung_binh: "",
+            tinhHocluc: function () {
+              if(this.diem_trung_binh < 5){
+                    return "học lực yếu";
+              }else if(this.diem_trung_binh < 7){
+                    return "học lực trung bình";
+              }else if(this.diem_trung_binh < 8){
+                    return "học lực khá";
+              }else{
+                  return "học lực giỏi";
+              }
+            },
+            thoiGianratruong: function () {
+                var now = new date();
+                const diffTime = Math.abs(now - this,ngay_nhap_hoc);
+                const diffDays = Math.ceil(diffTime/(1000*60*60*24));
+                console.log("thời gian ra trường :" + diffDays);
+            }
+            sv1.thoiGianratruong();
+        }
+    </script>
+</body>
+</html>
